@@ -1,0 +1,350 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="WF_AbrirSiteFazerLogin" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="758,3099" sap2010:WorkflowViewState.IdRef="WF_AbrirSiteFazerLogin_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="22">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="WF_AbrirSiteFazerLogin" sap:VirtualizedContainerService.HintSize="738,3039" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="var_strVerificaRetry" />
+      <Variable x:TypeArguments="x:String" Name="var_strSiteAlgar" />
+      <Variable x:TypeArguments="x:String" Name="var_strLoginAlgar" />
+      <Variable x:TypeArguments="ss:SecureString" Name="var_strPasswordAlgar" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="696,2947" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch.Try>
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="658,2720" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
+          <ui:RetryScope.ActivityBody>
+            <ActivityAction>
+              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="616,2502" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="574,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[var_strVerificaRetry]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">False</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="574,2310" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch.Try>
+                    <Sequence sap:VirtualizedContainerService.HintSize="536,2083" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="494,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Abrindo site da Algar e fazendo login&quot;]" />
+                      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Algar_CaminhoDoSite" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="494,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+                        <ui:GetRobotAsset.Value>
+                          <OutArgument x:TypeArguments="x:String">[var_strSiteAlgar]</OutArgument>
+                        </ui:GetRobotAsset.Value>
+                      </ui:GetRobotAsset>
+                      <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="494,1571" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[var_strSiteAlgar]">
+                        <ui:OpenBrowser.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                            </ActivityAction.Argument>
+                            <Sequence sap:VirtualizedContainerService.HintSize="460,1472" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,1380" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                                <Sequence DisplayName="Sq Login" sap:VirtualizedContainerService.HintSize="376,1080" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Algar_LoginSenha" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[var_strPasswordAlgar]" Username="[var_strLoginAlgar]" />
+                                  <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element Botão Fazer Login" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" WaitActive="False" WaitVisible="False">
+                                    <ui:WaitUiElementAppear.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="38b8065b660fbc7001eb33d89d6f5532" Selector="&lt;webctrl tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                      </ui:Target>
+                                    </ui:WaitUiElementAppear.Target>
+                                  </ui:WaitUiElementAppear>
+                                  <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+                                    <TextExpression.Namespaces>
+                                      <sco:Collection x:TypeArguments="x:String">
+                                        <x:String>System.Activities</x:String>
+                                        <x:String>System.Activities.Statements</x:String>
+                                        <x:String>System.Activities.Expressions</x:String>
+                                        <x:String>System.Activities.Validation</x:String>
+                                        <x:String>System.Activities.XamlIntegration</x:String>
+                                        <x:String>Microsoft.VisualBasic.Activities</x:String>
+                                        <x:String>System</x:String>
+                                        <x:String>System.Collections.Generic</x:String>
+                                        <x:String>System.Data</x:String>
+                                        <x:String>System.Diagnostics</x:String>
+                                        <x:String>System.IO</x:String>
+                                        <x:String>System.Linq</x:String>
+                                        <x:String>System.Management.Automation</x:String>
+                                        <x:String>System.Net.Mail</x:String>
+                                        <x:String>System.Xml</x:String>
+                                        <x:String>System.Xml.Linq</x:String>
+                                        <x:String>UiPath.Library</x:String>
+                                        <x:String>System.Windows.Markup</x:String>
+                                      </sco:Collection>
+                                    </TextExpression.Namespaces>
+                                    <TextExpression.References>
+                                      <sco:Collection x:TypeArguments="AssemblyReference">
+                                        <AssemblyReference>System.Activities</AssemblyReference>
+                                        <AssemblyReference>mscorlib</AssemblyReference>
+                                        <AssemblyReference>System.Data</AssemblyReference>
+                                        <AssemblyReference>System</AssemblyReference>
+                                        <AssemblyReference>System.Core</AssemblyReference>
+                                        <AssemblyReference>System.Management.Automation</AssemblyReference>
+                                        <AssemblyReference>System.Xml</AssemblyReference>
+                                        <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                                        <AssemblyReference>UiPath.Library</AssemblyReference>
+                                        <AssemblyReference>PresentationFramework</AssemblyReference>
+                                        <AssemblyReference>WindowsBase</AssemblyReference>
+                                        <AssemblyReference>PresentationCore</AssemblyReference>
+                                        <AssemblyReference>System.Xaml</AssemblyReference>
+                                      </sco:Collection>
+                                    </TextExpression.References>
+                                    <sap2010:WorkflowViewState.ViewStateManager>
+                                      <sap2010:ViewStateManager>
+                                        <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                                      </sap2010:ViewStateManager>
+                                    </sap2010:WorkflowViewState.ViewStateManager>
+                                  </Delay>
+                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Usuário" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                    <ui:Click.CursorPosition>
+                                      <ui:CursorPosition Position="Center">
+                                        <ui:CursorPosition.OffsetX>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetX>
+                                        <ui:CursorPosition.OffsetY>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetY>
+                                      </ui:CursorPosition>
+                                    </ui:Click.CursorPosition>
+                                    <ui:Click.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7f8461a6c706ecf1567cd7001cad44fe" Selector="&lt;webctrl aaname='Usuário' tag='SPAN' /&gt;" WaitForReady="INTERACTIVE">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                      </ui:Target>
+                                    </ui:Click.Target>
+                                  </ui:Click>
+                                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into Usuario" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[var_strLoginAlgar]">
+                                    <ui:TypeInto.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7f8461a6c706ecf1567cd7001cad44fe" Selector="&lt;webctrl aaname='Usuário' tag='SPAN' /&gt;" WaitForReady="INTERACTIVE">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                      </ui:Target>
+                                    </ui:TypeInto.Target>
+                                  </ui:TypeInto>
+                                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="%[k(tab)]">
+                                    <ui:TypeInto.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" WaitForReady="INTERACTIVE">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                      </ui:Target>
+                                    </ui:TypeInto.Target>
+                                  </ui:TypeInto>
+                                  <ui:TypeSecureText ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Secure Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[var_strPasswordAlgar]">
+                                    <ui:TypeSecureText.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4aea471a424bfc91a3b478be76b789be" Selector="&lt;webctrl aaname='Digite sua senha' tag='SPAN' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:TypeSecureText.Target>
+                                  </ui:TypeSecureText>
+                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                    <ui:SendHotkey.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:SendHotkey.Target>
+                                  </ui:SendHotkey>
+                                </Sequence>
+                                <ui:ImageFound Found="{x:Null}" DisplayName="Esperando carregar o botão de procura" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                                  <ui:ImageFound.Image>
+                                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                                  </ui:ImageFound.Image>
+                                  <ui:ImageFound.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:ImageFound.Target>
+                                </ui:ImageFound>
+                              </Sequence>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:OpenBrowser.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:OpenBrowser>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WF_LendoPlanilhas workflow" sap:VirtualizedContainerService.HintSize="494,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WF_LendoPlanilhas.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[var_strVerificaRetry]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="540,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Fechando atividades." sap:VirtualizedContainerService.HintSize="376,289" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Erro ao tentar download.&quot;]" />
+                          <Sequence DisplayName="Sq Kill Process" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Killing processes: Excel e Chrome&quot;]" />
+                            <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="excel" />
+                            <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="chrome" />
+                          </Sequence>
+                        </Sequence>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+              </Sequence>
+            </ActivityAction>
+          </ui:RetryScope.ActivityBody>
+          <ui:RetryScope.Condition>
+            <ActivityFunc x:TypeArguments="x:Boolean">
+              <ui:IsMatch DisplayName="Is Match" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[var_strVerificaRetry]" IsBuilderTabModified="False" Pattern="True" RegexOption="IgnoreCase, Compiled" />
+            </ActivityFunc>
+          </ui:RetryScope.Condition>
+        </ui:RetryScope>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="620,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Todas as tentativa do retry deram errada&quot;]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

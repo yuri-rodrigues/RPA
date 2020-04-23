@@ -1,0 +1,130 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="WF_CapturandoErros" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="859,1406" sap2010:WorkflowViewState.IdRef="WF_CapturandoErros_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="22">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.CV</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="WF_CapturandoErros" sap:VirtualizedContainerService.HintSize="839,1346" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="var_booContaJaFoiPaga" />
+      <Variable x:TypeArguments="x:Boolean" Name="var_booPopUpErro" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="797,1254" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Verificando se o site dá erro ou se não há faturas pagas.&quot;]" />
+      <Sequence DisplayName="Verificando se a conta já foi paga." sap:VirtualizedContainerService.HintSize="755,477" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:ImageFound DisplayName="Procura por 4s a mensagem'" Found="[var_booContaJaFoiPaga]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+          <ui:ImageFound.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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VmQqCqg0JbrSB8rRLac7PzQrj2hiccbkk0hLFFD5TxECbhddDgQKqIhIJQqoiEglCqiISCUKqIhIJQqoiEglCqiISCUKqIhIJQqoiEglCqiISCUKqIhIJQqoiEglCqiISCUKqIhIJQqoiEglCqiISCUKqIhIJQqoiEglCqiISCUKqIhIJQro37zzzjvdxx9/vPZrnD/++KP79ttvu99++23tiGxWqMvXX3+9+/rrr9eOiExjZQX0hRde6A455JCZO/zww7vt27d3n3zyyZqPdlx11VXdPffcs/ZrGG64q6++urv22mvT983GTz/9lMrwhBNO6J599tm1o5uXL7/8cuEHXx8///xzd95556W2djCwbHnJv1lpAT3ppJO6b775Jv3G6rvyyiu7008/vfvuu+/SsVYsKqCvvfZad8UVVyQh2mz8+eef3e2339498MAD3VdffdXt3Llz099M1Nki9TbEwSagy5aX/JtNI6DADY/19Oqrr6bfiAJiiuN7SZyP7nZ0v3/44Yfur7/+SscgBDT8Dwkkx4fiIjzCLcMG4icfrbr9kc6+uCDy2ZePsTyUjJXHUFnCWPzAcc4va8Vfc801vYKwSPyRr1JAI899ZbRoPSLM+OOzJOKeV/4RRl9c88pvKJ1D5UV4ff7H2nTJPL9D+R66biy8ofRuBJtKQD///PMkoC+99FIauzrllFO64447rjv66KO7iy++OBUs0Eh27NiRjtH9v++++7qnn366O/bYY9P1Rx55ZLdr165ZA0RA+X3OOeek80ccccQ/ztNYL7roonT9iSeemNy7776bzkVcnI+wCS8qd+/evd0xxxyTrtmyZUtvAw64hnCwFHP4ff3116eGtH///lm+CY/v77//fvLH+SeeeCLFR1pI7+WXX54a4VgeSkj/Lbfc0lsexDFWlm+88UYKm2v5JJ3UI9b7jz/+mNIT6TvqqKO6hx9+eHaDlD0B0teXzl9++SWV+aGHHjob4uE6wnnxxRdnaaNdkI4Y46R9YHmTZsI99dRTk78Q0LE2tUg9kq4bbrgh5Svy99xzz6VzCCK9lwiD833lTxgIHdfij7w8+OCDSXjGyo/75KyzzupuuummdC7y8Oabbw6WF22C44SHf1ykifAoO/JKeGeccUb3xRdfpHM5hDPW/sfa3VAcQ8fH0rtRbBoBpUK4qWngdEHfeuut7r33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" />
+          </ui:ImageFound.Image>
+          <ui:ImageFound.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;html app='chrome.exe' title='*' /&gt;" TimeoutMS="5000">
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:ImageFound.Target>
+        </ui:ImageFound>
+        <If Condition="[var_booContaJaFoiPaga]" sap:VirtualizedContainerService.HintSize="484,239" sap2010:WorkflowViewState.IdRef="If_1">
+          <If.Then>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Sem contas em aberto.&quot;]" />
+          </If.Then>
+        </If>
+      </Sequence>
+      <Sequence DisplayName="Verificando PopUpErro" sap:VirtualizedContainerService.HintSize="755,143" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If Condition="[var_booPopUpErro]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </If>
+      </Sequence>
+      <Sequence DisplayName="Verificando se encontrou faturas." sap:VirtualizedContainerService.HintSize="755,331" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If Condition="[var_booContaJaFoiPaga Or var_booPopUpErro]" sap:VirtualizedContainerService.HintSize="713,239" sap2010:WorkflowViewState.IdRef="If_3">
+          <If.Then>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WF_CapturandoDadosConta workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WF_CapturandoDadosConta.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Sem faturas para baixar&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+    </Sequence>
+  </Sequence>
+</Activity>
