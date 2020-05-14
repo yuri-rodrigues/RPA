@@ -1,0 +1,159 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="wf_CheckContaJaBaixada" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="arg_in_dtContas" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="arg_in_strContrato" Type="InArgument(x:String)" />
+    <x:Property Name="arg_in_strIdentificador" Type="InArgument(x:String)" />
+    <x:Property Name="arg_in_strValor" Type="InArgument(x:String)" />
+    <x:Property Name="arg_in_strVencimento" Type="InArgument(x:String)" />
+    <x:Property Name="arg_in_LCC" Type="InArgument(x:String)" />
+    <x:Property Name="arg_in_strAEN" Type="InArgument(x:String)" />
+    <x:Property Name="arg_out_intResultBusca" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="arg_in_MesRef" Type="InArgument(x:String)" />
+    <x:Property Name="arg_out_intNumFat" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1233,1164</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>wf_CheckContaJaBaixada_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="wf_CheckContaJaBaixada" sap:VirtualizedContainerService.HintSize="797,999" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:DatabaseConnection" Name="var_conexaoBD" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke wf_ConexaoBD workflow" sap:VirtualizedContainerService.HintSize="755,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="wf_ConexaoBD.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="arg_out_sqlConexao">[var_conexaoBD]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Buscando conta no banco&quot;]" />
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[arg_out_intResultBusca]" DisplayName="Execute Query" ExistingDbConnection="[var_conexaoBD]" sap:VirtualizedContainerService.HintSize="755,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="select * from tbl_iurd_down_concessionarias where AEN=@AEN and CONTRATO=@CONTRATO and LCC=@LCC and IDENTIFICADOR=@IDENTIFICADOR and VENCIMENTO=@VENCIMENTO and VALOR=@VALOR">
+      <ui:ExecuteQuery.Parameters>
+        <InArgument x:TypeArguments="x:String" x:Key="AEN">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_strAEN" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CONTRATO">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_strContrato" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LCC">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_LCC" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="IDENTIFICADOR">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_strIdentificador" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="VENCIMENTO">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_strVencimento" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="VALOR">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_strValor.Replace(&quot;.&quot;, &quot;&quot;)" />
+        </InArgument>
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <If Condition="[arg_out_intResultBusca.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="755,459" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,311" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Conta já baixada anteriormente. inserindo Log no Banco de Dados&quot;]" />
+          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[var_conexaoBD]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="INSERT Into tbl_iurd_log_download_contas VALUES&#xA;(@data_checagem, @tipo_conta, @concessionaria, @Identificador, @mesref, @vencimento, @valor, @status_down, @obs)">
+            <ui:ExecuteNonQuery.Parameters>
+              <InArgument x:TypeArguments="x:String" x:Key="data_checagem">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Now.toString(&quot;dd/MM/yyyy hh:mm:ss&quot;)" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="tipo_conta">
+                <Literal x:TypeArguments="x:String">AGUA</Literal>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="concessionaria">
+                <Literal x:TypeArguments="x:String">DAE BAURU</Literal>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Identificador">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_strIdentificador" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="mesref">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_MesRef" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="vencimento">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_strVencimento" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="valor">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_in_strValor.Replace(&quot;.&quot;, &quot;&quot;)" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="status_down">
+                <Literal x:TypeArguments="x:String">ALERTA</Literal>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="obs">
+                <Literal x:TypeArguments="x:String">FATURA JA BAIXADA ANTERIORMENTE</Literal>
+              </InArgument>
+            </ui:ExecuteNonQuery.Parameters>
+          </ui:ExecuteNonQuery>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Conta não baixada. Continua para download.&quot;]" />
+      </If.Else>
+    </If>
+    <ui:DatabaseDisconnect DatabaseConnection="[var_conexaoBD]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_2" />
+  </Sequence>
+</Activity>
